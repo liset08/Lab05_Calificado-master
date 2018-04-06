@@ -16,13 +16,13 @@ public class ProductoRepository {
 
     static {
 
-        productlista.add(new producto("KFC","mIRAFLORES", "8465697", "kfc","Pollo frito" ));
-        productlista.add(new producto("BEMBOS","mIRAFLORES", "8465697","bemb" ,"Pollo frito" ));
-        productlista.add(new producto("PIZZA HUT","mIRAFLORES", "8465697","pizzahut" ,"Pollo frito" ));
-        productlista.add(new producto("MC DONALDS","mIRAFLORES", "8465697","mcdon" ,"Pollo frito" ));
-        productlista.add(new producto("BURGER KING","mIRAFLORES", "8465697","burger","Pollo frito"  ));
-        productlista.add(new producto("CHILI","mIRAFLORES", "8465697","chil","Pollo frito"  ));
-        productlista.add(new producto("STARTBUCKS","SAN ISIDRO", "8465697","star" ,"Pollo frito" ));
+        productlista.add(new producto("KFC","Miralflores", "(01)-8465697", "kfc","Venta de Pollo frito." ));
+        productlista.add(new producto("BEMBOS","Magdalena", "(01)-8465697","bemb" ,"Venta de hamburguesas y comidas." ));
+        productlista.add(new producto("PIZZA HUT","San Isidro", "(01)-8465697","pizzahut" ,"Venta de pizza familiar,pequeña o mediana." ));
+        productlista.add(new producto("MC DONALDS","Ate", "(01)-8465697","mcdon" ,"Venta de hamburguesas y comidas." ));
+        productlista.add(new producto("BURGER KING","Comas", "(01)-8465697","burger","Venta de hamburguesas y comidas."  ));
+        productlista.add(new producto("CHILI","Surco", "(01)-8465697","chil","Venta de bebidas y comidas."  ));
+        productlista.add(new producto("STARTBUCKS","San Borja", "(01)-8465697","star" ,"Venta de cafes, milkshake u otras bebidas heladas y calientes." ));
 
 
     }

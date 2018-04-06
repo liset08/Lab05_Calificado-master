@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -33,7 +34,7 @@ public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.View
 
 
     public class ViewHolder extends RecyclerView.ViewHolder { ///este view holdeer va tener cargado esta clase de biew holder
-
+        private Button go;
         ImageView productImage;
         TextView nameText;
         TextView phoneText;
@@ -44,7 +45,9 @@ public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.View
             productImage = itemView.findViewById(R.id.product_image);
             nameText = itemView.findViewById(R.id.product_title);
             phoneText = itemView.findViewById(R.id.phone);
-         //   descText = itemView.findViewById(R.id.te);
+            go = itemView.findViewById(R.id.button);
+
+            //   descText = itemView.findViewById(R.id.te);
 
         }
     }
@@ -63,7 +66,7 @@ public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.View
 
         holder.nameText.setText(prod.getName());
         holder.phoneText.setText(prod.getPhone());
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
