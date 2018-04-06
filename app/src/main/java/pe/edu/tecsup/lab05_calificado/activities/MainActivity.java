@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.SearchView;
 import android.widget.Toast;
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerView listproducts;
     private SearchView searchView;
+    private ArrayAdapter<String> adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +42,25 @@ listproducts=(RecyclerView) findViewById(R.id.RecyclerView);
         personAdapter.setProduct(ProductoRepository.getList());
 
         listproducts.setAdapter(personAdapter);
+
+
+
+        searchView = (SearchView) findViewById(R.id.searchView);
+        searchView.setQueryHint("Type your keyword here");
+        searchView.onActionViewExpanded();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Toast.makeText(getApplication(), query + " submited!", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                //ProductosAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
 
 
 
