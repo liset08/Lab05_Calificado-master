@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_below="@+id/phone"
-            android:padding="10dp"
+            android:padding="12dp"
             android:background="@drawable/round_button"
             android:textColor="@color/cardview_light_background"
 
