@@ -30,10 +30,6 @@ public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.View
         this.product = product;
     }
 
-    public Filter getFilter() {
-        throw new RuntimeException("Stub!");
-
-    }
 
 
     public class ViewHolder extends RecyclerView.ViewHolder { ///este view holdeer va tener cargado esta clase de biew holder
@@ -67,7 +63,6 @@ public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.View
 
         holder.nameText.setText(prod.getName());
         holder.phoneText.setText(prod.getPhone());
-        holder.phoneText.setText(prod.getPhone());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,7 +70,11 @@ public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.View
    Intent intent=new Intent(holder.itemView.getContext(), DetailActivity.class);
 intent.putExtra("nameText", prod.getPhone() );
                 intent.putExtra("nameimg", prod.getName() );
+                intent.putExtra("namedis", prod.getDescripcion() );
+                intent.putExtra("nameadr", prod.getAdress() );
 
+
+                holder.itemView.getContext().startActivity(intent);
 
 
             }
