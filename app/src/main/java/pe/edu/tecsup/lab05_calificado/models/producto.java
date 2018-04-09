@@ -10,17 +10,13 @@ public class producto {
 
 
 
-
-
-
-
-
-    public producto(String name, String adress, String phone, String picture, String descripcion) {
+    public producto(String name, String adress, String phone, String picture, String descripcion, String web) {
         this.name = name;
         this.adress = adress;
         this.phone = phone;
         this.picture = picture;
         this.descripcion = descripcion;
+        this.web = web;
     }
 
     @Override
@@ -31,6 +27,7 @@ public class producto {
                 ", phone='" + phone + '\'' +
                 ", picture='" + picture + '\'' +
                 ", descripcion='" + descripcion + '\'' +
+                ", web='" + web + '\'' +
                 '}';
     }
 
@@ -39,10 +36,20 @@ public class producto {
     private String phone;
     private String picture;
     private String descripcion;
+    private String web;
+
 
 
     public String getDescripcion() {
         return descripcion;
+    }
+
+    public String getWeb() {
+        return web;
+    }
+
+    public void setWeb(String web) {
+        this.web = web;
     }
 
     public void setDescripcion(String descripcion) {

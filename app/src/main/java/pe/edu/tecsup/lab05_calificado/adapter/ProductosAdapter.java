@@ -75,6 +75,8 @@ intent.putExtra("nameText", prod.getPhone() );
                 intent.putExtra("nameimg", prod.getName() );
                 intent.putExtra("namedis", prod.getDescripcion() );
                 intent.putExtra("nameadr", prod.getAdress() );
+                intent.putExtra("nameimg2", holder.itemView.getContext().getResources().getIdentifier(prod.getPicture(), "drawable", holder.itemView.getContext().getPackageName()) );
+                intent.putExtra("nameweb", prod.getWeb() );
 
 
                 holder.itemView.getContext().startActivity(intent);
@@ -91,6 +93,6 @@ intent.putExtra("nameText", prod.getPhone() );
 
 
 
-    }
+}
 
 
