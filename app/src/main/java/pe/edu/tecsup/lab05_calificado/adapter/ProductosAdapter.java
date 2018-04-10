@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -38,6 +39,8 @@ public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.View
         ImageView productImage;
         TextView nameText;
         TextView phoneText;
+        TextView direccion;
+EditText search;
         TextView descText;
 
         public ViewHolder(View itemView) {
@@ -45,6 +48,8 @@ public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.View
             productImage = itemView.findViewById(R.id.product_image);
             nameText = itemView.findViewById(R.id.product_title);
             phoneText = itemView.findViewById(R.id.phone);
+            direccion = itemView.findViewById(R.id.direccion);
+search=itemView.findViewById(R.id.busqueda);
             go = itemView.findViewById(R.id.button);
 
             //   descText = itemView.findViewById(R.id.te);
@@ -63,9 +68,12 @@ public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.View
         final producto prod = product.get(position);
         final int resId = holder.itemView.getContext().getResources().getIdentifier(prod.getPicture(), "drawable", holder.itemView.getContext().getPackageName()); //busca la imagen mediante el registro del adaptador people
         holder.productImage.setImageResource(resId);
-
         holder.nameText.setText(prod.getName());
         holder.phoneText.setText(prod.getPhone());
+        holder.direccion.setText(prod.getAdress());
+        String textobusqueda=holder.search.getText().toString();
+
+
         holder.go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,7 +100,10 @@ intent.putExtra("nameText", prod.getPhone() );
     }
 
 
-
+    public void updateList(List<producto> list) {
+        product=list;
+notifyDataSetChanged();
+    }
 }
 
 

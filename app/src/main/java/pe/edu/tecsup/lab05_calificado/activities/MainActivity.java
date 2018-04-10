@@ -1,11 +1,15 @@
 package pe.edu.tecsup.lab05_calificado.activities;
 
 import android.content.ClipData;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 
 import java.util.ArrayList;
@@ -20,23 +24,22 @@ import static pe.edu.tecsup.lab05_calificado.repositories.ProductoRepository.pro
 
 public class MainActivity extends AppCompatActivity {
 
-    RecyclerView listproducts;
-    ProductosAdapter adapter;
+   ImageButton buscar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        listproducts = (RecyclerView) findViewById(R.id.RecyclerView);
+        buscar=(ImageButton) findViewById(R.id.btn_detalle);
+        buscar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-
-        listproducts.setLayoutManager(new LinearLayoutManager(this));  //de que manera se van a alinear los item de forma lineal
-
-        adapter = new ProductosAdapter();
-        adapter.setProduct(ProductoRepository.getList());
-
-        listproducts.setAdapter(adapter);
+                Intent intent =  new Intent(MainActivity.this, SearchResultActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

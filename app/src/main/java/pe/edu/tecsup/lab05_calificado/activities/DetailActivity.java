@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.StrictMode;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -18,10 +19,29 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Properties;
+
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+
 import pe.edu.tecsup.lab05_calificado.R;
 
 public class DetailActivity extends AppCompatActivity {
     Button send;
+
+    //correo electronico
+
+
+
+    Button enviar;
+    Session session;
+
+    //
     private Button volver;
     private static final int numero=985184554;
     private static final int PERMISSIONS_REQUEST=100;
@@ -226,8 +246,88 @@ dialogButtonOk.setOnClickListener(new View.OnClickListener() {
         return (check== PackageManager.PERMISSION_GRANTED);
     }
 
-//metodo par enviar el mensaje
+//metodo par enviar correo electronico
 
+    public void showDialogEmail(View view){
+
+        final Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.correo_dialog);
+        // Custom Android Allert Dialog Title
+        dialog.setTitle("Enviar E-mail");
+
+        Button dialogButtonCancel;
+        Button dialogButtonOk;
+       final EditText mensaje;
+        final EditText password;
+        final EditText adress;
+
+        mensaje = (EditText) dialog.findViewById(R.id.inputMensaje);
+        password = (EditText) dialog.findViewById(R.id.inputContra);
+        adress = (EditText) dialog.findViewById(R.id.inputCorreo);
+
+
+        dialogButtonCancel = (Button) dialog.findViewById(R.id.customDialogCancel);
+        dialogButtonOk = (Button) dialog.findViewById(R.id.buttonSendEmail);
+
+        // Click cancel to dismiss android custom dialog box
+        dialogButtonCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Cancel process!", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
+        dialogButtonOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final String txtMessage=mensaje.getText().toString();
+                final String correo=adress.getText().toString();
+                final String contraseña=password.getText().toString();
+
+
+                StrictMode.ThreadPolicy policy=new StrictMode.ThreadPolicy.Builder().permitAll().build();
+                StrictMode.setThreadPolicy(policy);
+                Properties properties=new Properties();
+                properties.put("mail.smtp.host", "smtp.googlemail.com");
+                properties.put("mail.smtp.socketFactory.port", "465");
+                properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+                properties.put("mail.smtp.auth", "true");
+                properties.put("mail.smtp.port", "465");
+
+
+                try {
+                    session=Session.getDefaultInstance(properties, new Authenticator() {
+                        @Override
+                        protected PasswordAuthentication getPasswordAuthentication() {
+                            return new PasswordAuthentication(correo,contraseña
+                            );
+                        }
+                    });
+
+                    if (session!=null){
+                        Message message= new MimeMessage(session);
+                        message.setFrom(new InternetAddress(correo));
+                        message.setSubject("Envios dede la Aplicacion Movil");
+                        message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("liset.amaro57@gmail.com"));
+                        message.setContent(txtMessage, "text/html; charset=utf-8");
+                        Transport.send(message);
+
+                    }
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+
+
+
+
+            }
+        });
+
+
+        dialog.show();
+
+    }
 
 }
 

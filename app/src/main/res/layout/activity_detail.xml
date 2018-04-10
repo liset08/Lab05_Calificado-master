@@ -4,76 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cardview_light_background"
     tools:context="pe.edu.tecsup.lab05_calificado.activities.DetailActivity">
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="431dp" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="150dp"
         android:background="@color/colorAccent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
 
         <ImageView
-            android:layout_width="75dp"
-            android:layout_height="wrap_content"
-            android:onClick="showDialog"
-            app:srcCompat="@drawable/sms" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="91dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:paddingTop="30dp"
-            android:textAlignment="center"
-            android:textColor="@color/cardview_light_background"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="32dp" />
-
-        <ImageView
-            android:id="@+id/web_image"
-            android:layout_width="65dp"
-            android:onClick="callurl"
-
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/wb" />
-
+            android:id="@+id/imageView10"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="160dp"
+            app:srcCompat="@drawable/call" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="214dp"
         android:layout_marginTop="8dp"
         android:background="@color/cardview_light_background"
         android:orientation="vertical"
         android:padding="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_button"
+            android:padding="10dp"
             android:text="Informacion "
-            android:textSize="24sp"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="258dp" />
@@ -86,84 +63,209 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
             android:paddingTop="10dp"
+            android:textColor="@color/icons"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="153dp" />
 
-        <Button
-            android:id="@+id/brnvolver"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginEnd="100dp"
-
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/round_button"
-            android:onClick="volver"
-            android:padding="10dp"
-            android:text="Aceptar"
-            android:textAlignment="center"
-            android:textColor="@color/primary_light"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="444dp" />
-
     </LinearLayout>
 
     <TextView
         android:id="@+id/text"
-        android:layout_width="292dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="104dp"
-        android:padding="5dp"
-        android:textAlignment="textStart"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="65dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:onClick="call"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout"
-        app:srcCompat="@android:drawable/stat_sys_phone_call" />
+        android:padding="5dp"
+        android:textAlignment="textStart"
+        android:textColor="@color/icons"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView11"
+        app:layout_constraintTop_toBottomOf="@+id/txtdireccion" />
+
 
     <ImageView
         android:id="@+id/imagedetalle"
-        android:layout_width="65dp"
-        android:layout_height="40dp"
+        android:layout_width="150dp"
+        android:layout_height="110dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_mylocation" />
+
+    <Button
+        android:id="@+id/brnvolver"
+        android:layout_width="55dp"
+        android:layout_height="0dp"
+
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/round_button"
+        android:onClick="volver"
+        android:padding="10dp"
+        android:text="A"
+        android:textAlignment="center"
+        android:textColor="@color/primary_light"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="0dp" />
 
     <TextView
         android:id="@+id/txtdireccion"
         android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="24dp"
+
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:padding="5dp"
+        android:layout_marginTop="8dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@color/icons"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView8"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
-        app:layout_constraintStart_toEndOf="@+id/imagedetalle"
-        app:layout_constraintTop_toBottomOf="@+id/text" />
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/cardview_light_background"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        app:layout_constraintVertical_bias="0.787">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInputLayo"
+
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/detalle_permi"
+            android:padding="10dp"
+            tools:layout_editor_absoluteX="212dp"
+            tools:layout_editor_absoluteY="503dp">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:onClick="showDialog"
+                app:srcCompat="@drawable/ssms" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInputLayouuts"
+
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/detalle_permi"
+            android:padding="10dp"
+            tools:layout_editor_absoluteX="114dp"
+            tools:layout_editor_absoluteY="503dp">
+
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:onClick="showDialogEmail"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/email" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInputLayoutt"
+
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/detalle_permi"
+            android:padding="10dp"
+            tools:layout_editor_absoluteX="114dp"
+            tools:layout_editor_absoluteY="503dp">
+
+
+            <ImageView
+                android:id="@+id/web_image"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+
+                android:onClick="callurl"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/wb" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInputLayoou"
+
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/detalle_permi"
+            android:padding="10dp"
+            tools:layout_editor_absoluteX="114dp"
+            tools:layout_editor_absoluteY="503dp">
+
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:onClick="call"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@android:drawable/stat_sys_phone_call"
+                tools:layout_editor_absoluteY="152dp" />
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_weight="1"
+        android:paddingTop="30dp"
+        android:textAlignment="center"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagedetalle" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="30dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:srcCompat="@drawable/dir" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="30dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        app:srcCompat="@drawable/call" />
 
 </android.support.constraint.ConstraintLayout>

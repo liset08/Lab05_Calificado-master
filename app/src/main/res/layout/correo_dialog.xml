@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+    <EditText
+        android:id="@+id/inputCorreo"
+        android:hint="Correo"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:padding="16dp" />
+    <EditText
+        android:id="@+id/inputContra"
+        android:hint="Password"
+        android:layout_width="350dp"
+        android:inputType="textPassword"
+        android:layout_height="wrap_content"
+        android:padding="16dp" />
+    <EditText
+    android:id="@+id/inputMensaje"
+    android:hint="Mensaje"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:padding="16dp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/customDialogCancel"
+            android:text="Cancelar" />
+
+
+        <Button
+            android:id="@+id/buttonSendEmail"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentRight="true"
+            android:text="Enviar" />
+    </RelativeLayout>
+
+</LinearLayout>
