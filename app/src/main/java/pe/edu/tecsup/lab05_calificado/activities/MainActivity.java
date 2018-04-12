@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 
 
@@ -25,18 +26,22 @@ import static pe.edu.tecsup.lab05_calificado.repositories.ProductoRepository.pro
 public class MainActivity extends AppCompatActivity {
 
    ImageButton buscar;
+    EditText editText2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        buscar=(ImageButton) findViewById(R.id.btn_detalle);
+        buscar=(ImageButton) findViewById(R.id.button_search);
+        editText2 = findViewById(R.id.buscar);
+
         buscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Intent intent =  new Intent(MainActivity.this, SearchResultActivity.class);
+                intent.putExtra("text", editText2.getText().toString());
                 startActivity(intent);
             }
         });

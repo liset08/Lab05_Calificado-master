@@ -49,7 +49,6 @@ EditText search;
             nameText = itemView.findViewById(R.id.product_title);
             phoneText = itemView.findViewById(R.id.phone);
             direccion = itemView.findViewById(R.id.direccion);
-search=itemView.findViewById(R.id.busqueda);
             go = itemView.findViewById(R.id.button);
 
             //   descText = itemView.findViewById(R.id.te);
@@ -71,7 +70,6 @@ search=itemView.findViewById(R.id.busqueda);
         holder.nameText.setText(prod.getName());
         holder.phoneText.setText(prod.getPhone());
         holder.direccion.setText(prod.getAdress());
-        String textobusqueda=holder.search.getText().toString();
 
 
         holder.go.setOnClickListener(new View.OnClickListener() {
@@ -100,9 +98,9 @@ intent.putExtra("nameText", prod.getPhone() );
     }
 
 
-    public void updateList(List<producto> list) {
-        product=list;
-notifyDataSetChanged();
+    public void filterList(ArrayList<producto> filteredList) {
+        product = filteredList;
+        notifyDataSetChanged();
     }
 }
 
